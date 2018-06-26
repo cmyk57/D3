@@ -3,7 +3,10 @@
 *    Mastering Data Visualization with D3.js
 *    2.8 - Activity: Your first visualization!
 */
-var data = [25, 20, 10, 12, 15];
+d3.json("data/buildings.json").then(function(data){
+  data.forEach(function(d){
+    d.height = +d.height;
+  });
 
 var svg = d3.select("#chart-area").append("svg")
   .attr("width", 400)
@@ -18,5 +21,7 @@ var rects = svg.selectAll("rect")
     return (i * 50) + 25;
   })
   .attr("width", 25)
-  .attr("height", 45)
+  .attr("height", function(d){
+    return d.height * 2;
+  })
   .attr("fill", "red");
