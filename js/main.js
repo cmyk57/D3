@@ -17,13 +17,6 @@ var rects = svg.selectAll("rect")
   .attr("y", (d, i) => {
     return (i * 50) + 25;
   })
-  .attr("width", function(d, i){
-    return 25;
-  })
-  .attr("height", function(d){
-    return 25;
-  })
-  .attr("fill", function(d){
-      return "red"
-    }
-  });
+  .attr("width", 25)
+  .attr("height", 45)
+  .attr("fill", "red");
