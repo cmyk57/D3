@@ -8,6 +8,7 @@ d3.json("data/buildings.json").then(function(data){
     d.height = +d.height;
   });
 
+
 var svg = d3.select("#chart-area").append("svg")
   .attr("width", 400)
   .attr("height", 400);
@@ -25,3 +26,4 @@ var rects = svg.selectAll("rect")
     return d.height * 2;
   })
   .attr("fill", "red");
+});
