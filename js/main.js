@@ -18,9 +18,10 @@ var rects = svg.selectAll("rect")
 
   rects.enter()
   .append("rect")
-  .attr("y", (d, i) => {
+  .attr("x", (d, i) => {
     return (i * 50) + 25;
   })
+  .attr("y", 100)
   .attr("width", 25)
   .attr("height", function(d){
     return d.height * 2;
